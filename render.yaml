@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: video-cover
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start

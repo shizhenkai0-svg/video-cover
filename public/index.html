@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>封面提取 · 视频链接 / 视频号</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg"></div>
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">Cover Extractor</p>
+        <h1>提取视频封面</h1>
+        <p class="lead">粘贴视频链接、分享口令或视频号，自动识别平台并取出封面图。</p>
+      </header>
+
+      <section class="card">
+        <label class="label" for="input">视频链接或视频号</label>
+        <textarea
+          id="input"
+          rows="4"
+          placeholder="例如：https://www.bilibili.com/video/BV1xx411c7mD&#10;或 YouTube 链接 / 11 位视频 ID&#10;或抖音、视频号分享口令中的链接"
+        ></textarea>
+        <div class="actions">
+          <button id="extract" type="button">提取封面</button>
+          <button id="paste" class="ghost" type="button">粘贴剪贴板</button>
+          <button id="clear" class="ghost" type="button">清空</button>
+        </div>
+        <ul class="platforms">
+          <li>YouTube</li>
+          <li>哔哩哔哩</li>
+          <li>抖音</li>
+          <li>视频号</li>
+          <li>快手</li>
+          <li>小红书</li>
+          <li>TikTok</li>
+        </ul>
+      </section>
+
+      <p id="status" class="status" hidden></p>
+
+      <section id="result" class="result" hidden>
+        <figure class="preview">
+          <img id="cover" alt="视频封面" />
+          <video id="frame-source" muted playsinline crossorigin="anonymous" hidden></video>
+        </figure>
+        <div class="meta">
+          <span id="platform" class="badge"></span>
+          <h2 id="title"></h2>
+          <p id="author"></p>
+          <div class="result-actions">
+            <a id="download" href="#" download="video-cover.jpg">下载封面</a>
+            <button id="copy" type="button">复制封面地址</button>
+            <a id="open" href="#" target="_blank" rel="noreferrer">打开原页</a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>支持完整链接、短链、分享文案中的 URL，以及 YouTube ID、B 站 BV/av 号。</p>
+        <p>微信视频号请粘贴分享链接；纯数字视频号无法通过公开接口查询。</p>
+      </footer>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
