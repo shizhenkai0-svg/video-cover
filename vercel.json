@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/extract.js": { "maxDuration": 60 },
+    "api/image.js": { "maxDuration": 30 },
+    "api/download.js": { "maxDuration": 30 }
+  }
+}
